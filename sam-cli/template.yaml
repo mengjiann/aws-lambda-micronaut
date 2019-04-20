@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 10
+
+Resources:
+
+  PowerOfThreeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../target/aws-lambda-micronaut-0.1.jar
+      Handler: io.micronaut.function.aws.MicronautRequestStreamHandler
+      Runtime: java8
